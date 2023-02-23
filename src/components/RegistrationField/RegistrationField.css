@@ -1,0 +1,50 @@
+.beta_test_registration{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  padding: 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+.beta_test_registration_title{
+  font-size: 30px;
+  margin: 0;
+  color: #E75626FF;
+}
+.beta_lorem_text{
+  width: 65%;
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Montserrat', sans-serif;
+}
+.input_label{
+  width: 100%;
+  padding: 20px 0px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.label_text{
+  font-size: 22px;
+  margin: 0;
+}
+.registration_input{
+  width: 60%;
+  border: 1px white solid;
+  outline: 1px;
+  padding: 10px 15px;
+  border-radius: 20px;
+  background-color: transparent;
+}
+.early_access_button{
+  padding: 10px 15px;
+  background-color: #E75626FF;
+  color: white;
+  border-radius: 25px;
+  border: none;
+  outline: none;  
+  font-family: 'Bebas Neue';
+  font-size: 20px;
+}
