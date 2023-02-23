@@ -51,7 +51,7 @@ const RegistrationField = () => {
           :
           <input 
             className='registration_input' 
-            type="text" 
+            type="email" 
             placeholder='We will display your email in participation list' 
             value={inputClientEmail}
             onChange={(e) => setClientEmail(e.target.value)}  
@@ -59,9 +59,18 @@ const RegistrationField = () => {
         }
         
       </div>
+      {
+        client.username ?
+        
+      <button className='list_me_to_table'> 
+        LIST ME TO TABLE
+      </button>
+      :
+      
       <button onClick={() => onclickEarlyAccess()} className='early_access_button'> 
         GET EARLY ACCESS
       </button>
+      }
     </div>
   )
 }

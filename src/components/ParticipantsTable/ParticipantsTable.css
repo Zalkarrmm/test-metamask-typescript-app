@@ -20,4 +20,22 @@
 }
 .table_row_data{
   cursor: pointer;
+  position: relative;
+}
+.table_row_data:hover .table_row_data_cell{
+  color: #E75626FF !important;
+}
+.delete_button{
+  display: none;
+  color: white !important;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  position: absolute;
+  right: 0px;
+  top: 30%;
+}
+.table_row_data:hover .delete_button{
+  display: block;
 }

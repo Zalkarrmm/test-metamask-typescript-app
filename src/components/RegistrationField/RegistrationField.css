@@ -48,3 +48,13 @@
   font-family: 'Bebas Neue';
   font-size: 20px;
 }
+.list_me_to_table{
+  padding: 15px 20px;
+  background-color: #e75626be;
+  color: rgba(255, 255, 255, 0.733);
+  border-radius: 25px;
+  border: none;
+  outline: none;  
+  font-family: 'Bebas Neue';
+  font-size: 20px;
+}

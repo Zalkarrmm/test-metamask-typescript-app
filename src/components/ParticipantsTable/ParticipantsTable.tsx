@@ -5,14 +5,22 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { BigTextCutter } from '../../utils/helpers';
+import { BigTextCutter, deleteFromTable } from '../../utils/helpers';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
+import { ClientData } from '../../types/types';
+import { useDispatch } from 'react-redux';
+import { setParticipant } from '../../redux/ParticipantsData/ParticipantsSlice';
 const ParticipantsTable = () => {
+  const dispatch = useDispatch()
   const participants = useSelector((state:RootState) => state.participiantsData.participants)
   const client = useSelector((state:RootState) => state.participiantsData.user)
-  const goByToPersonalPage = (id:string) => {
+  const goByToPersonalPage = (id:string, e: React.SyntheticEvent) => {
+    e.stopPropagation()
     console.log(id)
+  }
+  const onclickDeleteFromTable = (row: ClientData) => {
+    dispatch(setParticipant(deleteFromTable(participants, row)))
   }
   return (
     <div className='participants_table'>
@@ -40,7 +48,7 @@ const ParticipantsTable = () => {
                     <TableRow 
                       key={row.id} 
                       className='table_row_data'
-                      onClick={() => goByToPersonalPage(row.address)} 
+                      onClick={(e) => goByToPersonalPage(row.address, e)} 
                       >
                       <TableCell className='table_row_data_cell'>
                         {row.username}
@@ -51,6 +59,7 @@ const ParticipantsTable = () => {
                       <TableCell className='table_row_data_cell'>
                         {BigTextCutter(row.address, 19)}
                       </TableCell>
+                      <button className='delete_button' onClick={() => onclickDeleteFromTable(row)}>x</button>
                     </TableRow>
                   )
                 })

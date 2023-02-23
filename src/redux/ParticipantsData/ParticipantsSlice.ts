@@ -45,8 +45,9 @@ export const ParticipantsSlice = createSlice({
       state.user.email = action.payload.email
       state.user.username = action.payload.username
     },
-    setParticipant: (state:ParticipantsState, action:PayloadAction<ClientData>) => {
-      
+    setParticipant: (state:ParticipantsState, action:PayloadAction<ClientData[]>) => {
+      console.log(action.payload)
+      state.participants = action.payload
     }
   },
   extraReducers: (builder) => {
@@ -55,6 +56,7 @@ export const ParticipantsSlice = createSlice({
     })
     builder.addCase(getPatricipants.fulfilled, (state, action: PayloadAction<ParticipantsData>) => {
       state.participants = action.payload.data.items
+      state.participants.unshift(state.user)
       state.loading = false
     })
     builder.addCase(getPatricipants.rejected, (state) => {
