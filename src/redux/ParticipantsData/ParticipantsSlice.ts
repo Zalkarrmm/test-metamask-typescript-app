@@ -46,7 +46,6 @@ export const ParticipantsSlice = createSlice({
       state.user.username = action.payload.username
     },
     setParticipant: (state:ParticipantsState, action:PayloadAction<ClientData[]>) => {
-      console.log(action.payload)
       state.participants = action.payload
     }
   },

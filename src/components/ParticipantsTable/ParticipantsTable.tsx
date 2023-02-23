@@ -11,15 +11,21 @@ import { RootState } from '../../redux/store';
 import { ClientData } from '../../types/types';
 import { useDispatch } from 'react-redux';
 import { setParticipant } from '../../redux/ParticipantsData/ParticipantsSlice';
+import { useNavigate } from 'react-router-dom';
 const ParticipantsTable = () => {
   const dispatch = useDispatch()
+  let navigate = useNavigate()
   const participants = useSelector((state:RootState) => state.participiantsData.participants)
   const client = useSelector((state:RootState) => state.participiantsData.user)
   const goByToPersonalPage = (id:string, e: React.SyntheticEvent) => {
-    e.stopPropagation()
-    console.log(id)
+    if(id === client.address){
+      e.stopPropagation()
+    }else{
+      navigate(`/personalPage/${id}`)
+    }
   }
-  const onclickDeleteFromTable = (row: ClientData) => {
+  const onclickDeleteFromTable = (row: ClientData, e: React.SyntheticEvent) => {
+    e.stopPropagation()
     dispatch(setParticipant(deleteFromTable(participants, row)))
   }
   return (
@@ -59,7 +65,7 @@ const ParticipantsTable = () => {
                       <TableCell className='table_row_data_cell'>
                         {BigTextCutter(row.address, 19)}
                       </TableCell>
-                      <button className='delete_button' onClick={() => onclickDeleteFromTable(row)}>x</button>
+                      <button className='delete_button' onClick={(e) => onclickDeleteFromTable(row, e)}>x</button>
                     </TableRow>
                   )
                 })

@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import { Mainnet, DAppProvider, useEtherBalance, useEthers, Config, Goerli } from '@usedapp/core'
 import { formatEther } from '@ethersproject/units'
 import { getDefaultProvider } from 'ethers'
+import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
@@ -20,11 +21,13 @@ const config: Config = {
 }
 root.render( 
   <React.StrictMode>
-    <Provider store={store}>
-      <DAppProvider config={config}>
-          <App />
-      </DAppProvider>
-    </Provider>
+    <BrowserRouter>
+      <Provider store={store}>
+        <DAppProvider config={config}>
+            <App />
+        </DAppProvider>
+      </Provider>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

@@ -18,3 +18,18 @@ export interface RequestFuncProps {
   url: string
   type: string
 }
+export interface PersonalDataState {
+  address: string
+  id: string
+  username: string
+  email: string
+  loading: boolean
+}
+export interface PersonalData {
+  data: {
+    address: string
+    id: string
+    username: string
+    email: string
+  }
+}
