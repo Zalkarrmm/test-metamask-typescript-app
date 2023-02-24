@@ -45,8 +45,14 @@
   align-items: flex-start;
   justify-content: flex-start;
   flex-direction: column;
-  left: -15px;
-  top: -52px;
+  left: -50px;
+  top: -40px;
+} 
+@media screen and (max-width:1430px) {
+  .main_text_title_right{
+    left: -25px;
+    top: -50px;
+  }
 }
 .main_transparent_text{
   position: absolute;
@@ -130,7 +136,7 @@
   border-radius: 50%;
 }
 .border_element_point_2{
-  right: -55px;
+  right: -30px;
   top: 50%;
 }
 .border_element_point_3{
@@ -180,6 +186,7 @@
   font-weight: 100;
   text-shadow: 0 0 2px #fff;
   color: #0A0718;
+  letter-spacing: 16px;
 }
 .metaverse_text{
   margin-left: 20px;
