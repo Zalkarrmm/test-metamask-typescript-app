@@ -65,7 +65,11 @@ const ParticipantsTable = () => {
                       <TableCell className='table_row_data_cell'>
                         {BigTextCutter(row.address, 19)}
                       </TableCell>
-                      <button className='delete_button' onClick={(e) => onclickDeleteFromTable(row, e)}>x</button>
+                      
+                      {
+                        row.address === client.address && 
+                        <button className='delete_button' onClick={(e) => onclickDeleteFromTable(row, e)}>x</button>
+                      }
                     </TableRow>
                   )
                 })
