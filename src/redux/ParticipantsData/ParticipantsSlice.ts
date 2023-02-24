@@ -51,6 +51,11 @@ export const ParticipantsSlice = createSlice({
     },
     changeModalIsOpen: (state: ParticipantsState, action:PayloadAction<boolean>) => {
       state.modalIsOpen = action.payload
+    },
+    deleteParticipantClient: (state:ParticipantsState) => {
+      state.user.email = ''
+      state.user.id = ''
+      state.user.username = ''
     }
   },
   extraReducers: (builder) => {
@@ -71,6 +76,7 @@ export const {
   changeAddressState,
   setUserInfo,
   setParticipant,
-  changeModalIsOpen
+  changeModalIsOpen,
+  deleteParticipantClient
 } = ParticipantsSlice.actions
 export default ParticipantsSlice.reducer;

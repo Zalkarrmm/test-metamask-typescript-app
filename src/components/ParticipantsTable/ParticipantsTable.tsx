@@ -5,12 +5,12 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
-import { BigTextCutter, deleteFromTable } from '../../utils/helpers';
+import { BigTextCutter } from '../../utils/helpers';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../redux/store';
 import { ClientData } from '../../types/types';
 import { useDispatch } from 'react-redux';
-import { setParticipant } from '../../redux/ParticipantsData/ParticipantsSlice';
+import { deleteParticipantClient } from '../../redux/ParticipantsData/ParticipantsSlice';
 import { useNavigate } from 'react-router-dom';
 const ParticipantsTable = () => {
   const dispatch = useDispatch()
@@ -26,7 +26,7 @@ const ParticipantsTable = () => {
   }
   const onclickDeleteFromTable = (row: ClientData, e: React.SyntheticEvent) => {
     e.stopPropagation()
-    dispatch(setParticipant(deleteFromTable(participants, row)))
+    dispatch(deleteParticipantClient())
   }
   return (
     <div className='participants_table'>

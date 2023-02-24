@@ -22,6 +22,8 @@ const RegistrationField = () => {
     }else if(!address){
       dispatch(changeModalIsOpen(true))
     }
+    setClientName('')
+    setClientEmail('')
   }
 
   return (
