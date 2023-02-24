@@ -2,7 +2,7 @@
   width: 30%;
   margin: 0 auto;
 }
-.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+.MuiPaper-root{
   padding: 15px 0px;
   background-color: #262628 !important; 
   color: white !important;
