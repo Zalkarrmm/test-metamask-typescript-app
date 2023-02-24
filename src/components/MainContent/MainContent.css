@@ -75,6 +75,68 @@
   background-color: #1E1E20;
   box-shadow: 0px 0px 30px #171719;
 }
+.planet_loading_animate{
+  width: 486px;
+  height: 486px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+.border_element{
+  width: 486px;
+  height: 486px;
+  position: absolute;
+  border-radius: 50%;
+  /* border: 1px solid #E75626FF; */
+}
+.main_planet_back_4:hover .border_element{
+  border-right: 1px solid #E75626FF;
+  animation: loading 1s linear infinite; 
+}
+.border_points{
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background-color: #E75626FF;
+  border-radius: 50%;
+}
+.border_top_point{
+  position: absolute;
+  font-size: 15px;
+  color: black;
+  top: 1.6%;
+  left: 45%;
+  background-color: white;
+  padding: 2px 25px 2px 5px;
+  border-radius: 20px;
+}
+.border_white_circle{
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 20%;
+  right: 13%;
+  box-shadow: 0px 0px 10px black;
+  border-radius: 50%;
+}
+.border_element_point_1{
+  width: 7px;
+  height: 7px;
+  background-color: #E75626FF;
+  border-radius: 50%;
+}
+.border_element_point_2{
+  right: -55px;
+  top: 50%;
+}
+.border_element_point_3{
+  bottom: 3%;
+}
+/* .border_top_point */
 .main_planet_back_3{
   position: relative;
   width: 446px;
@@ -150,4 +212,23 @@
 }
 .secondary_right_text_orange_title{
   color: #E75626FF;
+}
+
+
+
+/* .loader { 
+  width: 100px; 
+  height:100px;  
+  border-radius: 50%; 
+  border-right: 1px solid #FF6B6B; 
+  animation: loading 1s linear infinite; 
+}  */
+
+@keyframes loading {     
+  0% {       
+    transform: rotate(0deg);     
+  }      
+  100% {       
+    transform: rotate(360deg);
+  } 
 }

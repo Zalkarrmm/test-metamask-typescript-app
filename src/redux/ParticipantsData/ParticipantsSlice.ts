@@ -13,7 +13,8 @@ const initialState: ParticipantsState = {
     id: '',
     email: '',
     username: ''
-  }
+  },
+  modalIsOpen: false
 }
 
 export const getPatricipants = createAsyncThunk(
@@ -47,6 +48,9 @@ export const ParticipantsSlice = createSlice({
     },
     setParticipant: (state:ParticipantsState, action:PayloadAction<ClientData[]>) => {
       state.participants = action.payload
+    },
+    changeModalIsOpen: (state: ParticipantsState, action:PayloadAction<boolean>) => {
+      state.modalIsOpen = action.payload
     }
   },
   extraReducers: (builder) => {
@@ -66,6 +70,7 @@ export const ParticipantsSlice = createSlice({
 export const {
   changeAddressState,
   setUserInfo,
-  setParticipant
+  setParticipant,
+  changeModalIsOpen
 } = ParticipantsSlice.actions
 export default ParticipantsSlice.reducer;

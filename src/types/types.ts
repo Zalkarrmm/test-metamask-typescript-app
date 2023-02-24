@@ -2,6 +2,7 @@ export interface ParticipantsState {
   participants: Array<ClientData>
   loading: boolean
   user: ClientData
+  modalIsOpen: boolean
 }
 export interface ClientData {
   address: string
@@ -32,4 +33,7 @@ export interface PersonalData {
     username: string
     email: string
   }
+}
+export interface ModalProps {
+  boolFromApp: boolean
 }

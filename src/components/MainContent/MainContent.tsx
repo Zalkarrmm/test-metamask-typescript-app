@@ -17,12 +17,23 @@ const MainContent = () => {
             </div>
 
             <div className='main_text_title_right'>
-              <div className='main_planet_back_4'>
-                <div className='main_planet_back_3'>
-                  <div className='main_planet_back_2'>
-                    <div className='main_planet_back_1'>
-                      <div className='back_img_planet'>
-                        <p className='main_transparent_text'>OWN PLANET <span className='metaverse_text'>METAVERSE</span></p>
+              <div className={'main_planet_back_4'}>
+                <div className='planet_loading_animate'>
+                    <div className='border_element'></div>
+                    <div className='border_top_point'>Q1 2022
+                      <div className='border_white_circle'>
+                        <div className='border_element_point_1'></div>
+                      </div>
+                    </div>
+                    <div className='border_points border_element_point_2'></div>
+                    <div className='border_points border_element_point_3'></div>
+                    <div className='border_points border_element_point_4'></div>
+                    <div className='main_planet_back_3'>
+                    <div className='main_planet_back_2'>
+                      <div className='main_planet_back_1'>
+                        <div className='back_img_planet'>
+                          <p className='main_transparent_text'>OWN PLANET <span className='metaverse_text'>METAVERSE</span></p>
+                        </div>
                       </div>
                     </div>
                   </div>

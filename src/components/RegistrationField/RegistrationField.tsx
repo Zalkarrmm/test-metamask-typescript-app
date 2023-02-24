@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { useSelector } from 'react-redux'
-import { getPatricipants, setUserInfo } from '../../redux/ParticipantsData/ParticipantsSlice'
+import { changeModalIsOpen, getPatricipants, setUserInfo } from '../../redux/ParticipantsData/ParticipantsSlice'
 import { RootState } from '../../redux/store'
 import './RegistrationField.css'
 const RegistrationField = () => {
@@ -19,6 +19,8 @@ const RegistrationField = () => {
         id: `${new Date()}${Math.random() * 100}`
       }))
       dispatch(getPatricipants())
+    }else if(!address){
+      dispatch(changeModalIsOpen(true))
     }
   }
 

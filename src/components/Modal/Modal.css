@@ -1,0 +1,29 @@
+.dialog_container{
+  width: 30%;
+  margin: 0 auto;
+}
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper{
+  padding: 15px 0px;
+  background-color: #262628 !important; 
+  color: white !important;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.dialog_title{
+  color: #E75626FF;
+}
+.metamask_link{
+  color: #E75626FF;
+  text-decoration: none;
+}
+.skip_button{
+  padding: 10px 15px;
+  border: none;
+  outline: none;
+  background-color: #E75626FF;
+  color: white;
+  border-radius: 20px;
+}

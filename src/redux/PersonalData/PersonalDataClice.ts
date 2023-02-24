@@ -20,7 +20,8 @@ export const getPersonalData = createAsyncThunk(
       url: `${BASE_URL}${DATA_API_GET_BY_ADRESS}${params}`
     };
     try{
-      return await requestFunc(reqParams)
+      const data = await requestFunc(reqParams)
+      return data
     }
     catch(error){
       return thunkApi.rejectWithValue(error);
@@ -44,6 +45,7 @@ export const PersonalDataClice = createSlice({
       state.address = action.payload.data.address
       state.username = action.payload.data.username
       state.email = action.payload.data.email
+      state.id = action.payload.data.id
       state.loading = false
     })
     builder.addCase(getPersonalData.rejected, (state) => {
